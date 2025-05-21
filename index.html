@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino Royal - CodePen</title>
+    <!-- Google Fonts CSS-də @import ilə əlavə olunacaq -->
+</head>
+<body>
+    <header>
+        <h1>Casino Royal <span class="sparkle">✨</span></h1>
+        <div class="player-info">
+            <span>Balans: $<span id="playerBalance">1000</span></span>
+        </div>
+    </header>
+
+    <nav class="game-tabs">
+        <button class="tab-button active" data-game="slot-machine">Slot Maşını</button>
+        <button class="tab-button" data-game="roulette">Ruletka</button>
+        <button class="tab-button" data-game="leaderboard-section">Liderlər Cədvəli</button>
+    </nav>
+
+    <main class="game-container">
+        <!-- Slot Machine -->
+        <div id="slot-machine" class="game-content active">
+            <h2><span class="icon">🎰</span> Slot Maşını</h2>
+            <div class="slot-machine-reels">
+                <div class="reel" id="reel1">💎</div>
+                <div class="reel" id="reel2">🍒</div>
+                <div class="reel" id="reel3">💰</div>
+            </div>
+            <div class="controls">
+                <label for="slotBet">Mərc:</label>
+                <input type="number" id="slotBet" value="10" min="1">
+                <button id="spinButton">Fırlat!</button>
+            </div>
+            <p id="slotMessage" class="message"></p>
+        </div>
+
+        <!-- Roulette -->
+        <div id="roulette" class="game-content">
+            <h2><span class="icon">🎡</span> Ruletka (Sadələşdirilmiş)</h2>
+            <div class="roulette-wheel-container">
+                <div id="rouletteWheel">
+                    <div class="wheel-pointer">▼</div>
+                    <div class="wheel-numbers">
+                        <!-- JavaScript tərəfindən doldurulacaq -->
+                    </div>
+                </div>
+                <div id="rouletteResult" class="message">Nəticə gözlənilir...</div>
+            </div>
+            <div class="roulette-controls">
+                <label for="rouletteBetAmount">Mərc Məbləği:</label>
+                <input type="number" id="rouletteBetAmount" value="10" min="1">
+                <p>Mərc et:</p>
+                <button class="bet-option" data-bet-type="color" data-value="red">Qırmızı</button>
+                <button class="bet-option" data-bet-type="color" data-value="black">Qara</button>
+                <button class="bet-option" data-bet-type="parity" data-value="even">Cüt</button>
+                <button class="bet-option" data-bet-type="parity" data-value="odd">Tək</button>
+                <br>
+                <label for="rouletteNumberBet">Nömrəyə Mərc (0-10):</label>
+                <input type="number" id="rouletteNumberBet" min="0" max="10">
+                <button id="spinRouletteButton">Ruletkanı Fırlat!</button>
+            </div>
+             <p id="rouletteMessage" class="message"></p>
+        </div>
+
+        <!-- Leaderboard -->
+        <div id="leaderboard-section" class="game-content">
+            <h2><span class="icon">🏆</span> Liderlər Cədvəli</h2>
+            <button id="resetLeaderboard">Cədvəli Sıfırla</button>
+            <table id="leaderboardTable">
+                <thead>
+                    <tr>
+                        <th>Sıra</th>
+                        <th>Oyunçu</th>
+                        <th>Xal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- JavaScript tərəfindən doldurulacaq -->
+                </tbody>
+            </table>
+            <div class="add-score-form">
+                <input type="text" id="playerName" placeholder="Adınızı daxil edin">
+                <button id="addPlayerToLeaderboard">Xalımı Əlavə Et (Balans)</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2023 Casino Royal. Bütün hüquqlar qorunur.</p>
+    </footer>
+
+    <!-- Scriptləri HTML-in sonuna (<body>-dən əvvəl) qoymaq daha yaxşıdır,
+         amma CodePen-də JavaScript bölməsinə yazılacaq. -->
+</body>
+</html>
